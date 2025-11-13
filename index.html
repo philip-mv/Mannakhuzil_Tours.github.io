@@ -3,18 +3,22 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Mannakuhzil Tours</title>
+<title>Mannakuzhil Tours</title>
 <style>
   body, html {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f4f6f8;
-    color: #333;
+    background: linear-gradient(to bottom, #70c1ff, #2e7d32);
+    color: #1a3d27;
+  }
+  h2 {
+    color: #fff !important;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
   }
   header {
-    background-color: #005f73;
-    color: white;
+    background-color: rgba(46, 125, 50, 0.9);
+    color: #daf5d6;
     padding: 20px 40px;
     text-align: center;
     font-size: 2em;
@@ -22,23 +26,23 @@
     letter-spacing: 2px;
   }
   nav {
-    background: #0a9396;
+    background: rgba(56, 142, 60, 0.9);
     display: flex;
     justify-content: center;
     gap: 20px;
     padding: 14px 0;
-    font-weight: 600;
+    font-weight: 700;
   }
   nav a {
-    color: white;
+    color: #eaf6e0;
     text-decoration: none;
-    padding: 6px 12px;
-    border-radius: 4px;
+    padding: 6px 14px;
+    border-radius: 6px;
     transition: background-color 0.3s ease;
   }
   nav a:hover {
-    background-color: #94d2bd;
-    color: #005f73;
+    background-color: #a5d6a7;
+    color: #145214;
   }
   main {
     max-width: 1100px;
@@ -47,224 +51,199 @@
   }
   .hero {
     background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=80');
+    filter: brightness(85%);
     background-size: cover;
     background-position: center;
-    height: 360px;
-    color: white;
+    height: 380px;
+    color: #daf5d6;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 3em;
+    font-size: 3.2em;
     font-weight: 700;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
-    border-radius: 12px;
-    margin-bottom: 40px;
+    text-shadow: 2px 2px 8px rgba(0,80,0,0.8);
+    border-radius: 16px;
+    margin-bottom: 50px;
   }
-  .explore {
-    background: white;
+  .packages, .services, #about, #contact {
+    background: rgba(208, 232, 215, 0.85);
     padding: 30px 20px;
-    border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
-    margin-bottom: 40px;
+    border-radius: 14px;
+    box-shadow: 0 3px 15px rgba(34, 85, 34, 0.15);
+    margin-bottom: 50px;
   }
-  .explore h2 {
-    color: #0a9396;
-    margin-bottom: 20px;
+  .packages h2, .services h2, #about h2, #contact h2 {
+    /* all section titles are already white */
+    margin-bottom: 22px;
     font-weight: 700;
     text-align: center;
   }
   .places {
     display: flex;
-    gap: 20px;
+    gap: 22px;
     flex-wrap: wrap;
     justify-content: center;
   }
   .place-card {
-    flex: 1 1 250px;
-    max-width: 280px;
-    background: #e0f0f6;
-    border-radius: 10px;
-    padding: 15px;
+    flex: 1 1 260px;
+    max-width: 300px;
+    background: rgba(240, 251, 240, 0.9);
+    border-radius: 12px;
+    padding: 20px 20px 30px 20px;
     text-align: center;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 18px rgba(0,90,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   .place-card img {
     width: 100%;
-    height: 160px;
+    height: 170px;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 14px;
+    margin-bottom: 12px;
+    border: 3px solid #a5d6a7;
   }
   .place-card h3 {
-    margin: 10px 0 6px;
-    color: #005f73;
+    margin: 14px 0 8px;
+    color: #1a3d27;
+  }
+  .place-card p {
+    flex-grow: 1;
+    color: #2e4d30;
+  }
+  .place-card button {
+    margin-top: 18px;
+    background-color: #2e7d32;
+    color: #daf5d6;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 30px;
+    font-size: 1em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .place-card button:hover {
+    background-color: #145214;
   }
   section {
     margin-top: 40px;
   }
-  h2 {
-    color: #0a9396;
-    margin-bottom: 20px;
-    font-weight: 700;
-  }
   p {
-    line-height: 1.6;
+    line-height: 1.7;
     font-size: 1.1em;
+    color: #2e4d30;
   }
-  /* Services with hover images */
   .services {
     display: flex;
-    gap: 20px;
+    gap: 23px;
     flex-wrap: wrap;
     justify-content: center;
   }
   .service-card {
-    background: white;
-    padding: 20px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    border-radius: 10px;
+    background: rgba(240, 251, 240, 0.95);
+    padding: 22px;
+    box-shadow: 0 2px 14px rgba(0, 100, 0, 0.1);
+    border-radius: 14px;
     flex: 1 1 300px;
     max-width: 320px;
     text-align: center;
-    transition: all 0.4s ease;
+    transition: all 0.45s ease;
     overflow: hidden;
-    height: 220px;
+    height: 230px;
     position: relative;
   }
   .service-card:hover {
-    height: 400px;
-    box-shadow: 0 6px 25px rgba(0,0,0,0.2);
-    transform: translateY(-10px);
+    height: 420px;
+    box-shadow: 0 7px 30px rgba(0, 100, 0, 0.3);
+    transform: translateY(-12px);
   }
   .service-image {
     opacity: 0;
     max-height: 0;
     overflow: hidden;
-    transition: all 0.4s ease;
-    margin-top: 15px;
+    transition: all 0.45s ease;
+    margin-top: 18px;
   }
   .service-card:hover .service-image {
     opacity: 1;
-    max-height: 160px;
+    max-height: 180px;
   }
   .service-image img {
     width: 100%;
-    height: 160px;
+    height: 180px;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 10px;
     display: block;
     margin: 0 auto;
-  }
-  /* Booking Form */
-  #booking {
-    background:#fff;
-    padding:30px;
-    border-radius:12px;
-    max-width:600px;
-    margin: 40px auto;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
-  }
-  #booking h2 {
-    color:#0a9396;
-    text-align:center;
-    margin-bottom:20px;
-  }
-  #booking label {
-    font-weight: 600;
-  }
-  #booking input, #booking select, #booking textarea {
-    width:100%;
-    padding:8px;
-    margin-bottom:12px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    font-size: 1em;
-  }
-  #booking button {
-    background-color:#0a9396;
-    color:white;
-    padding:12px 20px;
-    border:none;
-    border-radius:6px;
-    cursor:pointer;
-    font-size: 1em;
-  }
-  #booking button:hover {
-    background-color:#088180;
-  }
-  #paymentMessage {
-    margin-top:20px;
-    color:#005f73;
-    font-weight:bold;
-    text-align: center;
-  }
-  footer {
-    background-color: #001219;
-    color: white;
-    text-align: center;
-    padding: 15px 10px;
-    margin-top: 60px;
-    font-size: 0.9em;
+    border: 3px solid #a5d6a7;
   }
   @media (max-width: 768px) {
     main {
-      margin: 20px 10px;
+      margin: 25px 15px;
     }
     nav {
       flex-direction: column;
-      gap: 10px;
+      gap: 12px;
     }
-    .places {
+    .places, .services {
       flex-direction: column;
       align-items: center;
     }
-    .services {
-      flex-direction: column;
-      align-items: center;
-    }
+  }
+  footer {
+    background-color: #145214;
+    color: #daf5d6;
+    text-align: center;
+    padding: 14px 15px;
+    margin-top: 60px;
+    font-size: 0.95em;
+    letter-spacing: 0.02em;
   }
 </style>
 </head>
 <body>
-<header>Mannakuhzil Tours</header>
+<header>Mannakuzhil Tours</header>
 <nav>
   <a href="#home">Home</a>
-  <a href="#explore">Explore</a>
+  <a href="#packages">Packages</a>
   <a href="#services">Services</a>
-  <a href="#booking">Book Now</a>
   <a href="#about">About Us</a>
   <a href="#contact">Contact</a>
 </nav>
 <main>
-  <div class="hero" id="home">Explore Kerala with Mannakuhzil Tours</div>
-  
-  <section id="explore" class="explore">
-    <h2>Explore Beautiful Kerala</h2>
+  <div class="hero" id="home">Explore Kerala with Mannakuzhil Tours</div>
+  <section id="packages" class="packages">
+    <h2>Packages</h2>
     <div class="places">
       <div class="place-card">
-        <img src="https://images.unsplash.com/photo-1533681702356-a3759ca331f7?auto=format&fit=crop&w=400&q=80" alt="Munnar Hills" />
+        <img src="https://cdn.pixabay.com/photo/2025/06/09/14/30/tea-plantation-9650105_1280.jpg" alt="Munnar Hills" />
         <h3>Munnar</h3>
         <p>Rolling hills covered with tea plantations and misty mountains perfect for nature lovers.</p>
+        <button onclick="window.location='book-munnar.html'">Book Now</button>
       </div>
       <div class="place-card">
-        <img src="https://images.unsplash.com/photo-1505356825970-d57201d9c002?auto=format&fit=crop&w=400&q=80" alt="Alleppey Backwaters" />
+        <img src="https://images.unsplash.com/photo-1593693411515-c20261bcad6e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YWxhcHB1emhhfGVufDB8fDB8fHww" alt="Alleppey Backwaters" />
         <h3>Alleppey</h3>
         <p>Famous for tranquil backwaters and houseboat cruises through the serene lagoons.</p>
+        <button onclick="window.location='book-alleppey.html'">Book Now</button>
       </div>
       <div class="place-card">
         <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=400&q=80" alt="Kovalam Beach" />
         <h3>Kovalam</h3>
         <p>Beautiful palm-lined beaches with golden sands and vibrant local culture.</p>
+        <button onclick="window.location='book-kovalam.html'">Book Now</button>
       </div>
       <div class="place-card">
-        <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=400&q=80" alt="Wayanad" />
+        <img src="https://images.unsplash.com/photo-1723709431768-d749b0d814b9?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8d2F5YW5hZHxlbnwwfHwwfHx8MA%3D%3D" alt="Wayanad" />
         <h3>Wayanad</h3>
         <p>Lush green forests, waterfalls, and wildlife sanctuaries to explore and rejuvenate.</p>
+        <button onclick="window.location='book-wayanad.html'">Book Now</button>
       </div>
     </div>
   </section>
-  
-  <section id="services">
+  <section id="services" class="services">
     <h2>Our Services</h2>
     <div class="services">
       <div class="service-card">
@@ -297,65 +276,17 @@
       </div>
     </div>
   </section>
-  
-  <section id="booking">
-    <h2>Book Your Tour</h2>
-    <form id="tourBookingForm">
-      <label for="tour">Select Tour:</label><br />
-      <select id="tour" name="tour" required>
-        <option value="">--Choose a Tour--</option>
-        <option value="Guided Tours">Guided Tours</option>
-        <option value="Customized Itineraries">Customized Itineraries</option>
-        <option value="Transportation">Transportation</option>
-        <option value="Accommodation Booking">Accommodation Booking</option>
-      </select><br />
-
-      <label for="name">Name:</label><br />
-      <input type="text" id="name" name="name" required /><br />
-
-      <label for="contact">Contact Details (Email or Phone):</label><br />
-      <input type="text" id="contact" name="contact" required /><br />
-
-      <label for="people">Number of People:</label><br />
-      <input type="number" id="people" name="people" min="1" required /><br />
-
-      <label for="details">Additional Details:</label><br />
-      <textarea id="details" name="details" rows="4"></textarea><br />
-
-      <button type="submit">Submit & Pay</button>
-    </form>
-    <div id="paymentMessage"></div>
-  </section>
-  
   <section id="about">
-    <h2>About Mannakuhzil Tours</h2>
+    <h2>About Mannakuzhil Tours</h2>
     <p>We are a family-run tour service based in Kerala dedicated to providing personalized and memorable experiences to visitors. Our local knowledge and passion ensure that you discover the best hidden gems and popular destinations alike.</p>
   </section>
-  
   <section id="contact">
     <h2>Contact Us</h2>
-    <p>Email: info@mannakuhziltours.com</p>
+    <p>Email: info@mannakuzhiltours.com</p>
     <p>Phone: +91 98765 43210</p>
-    <p>Address: Mannakuhzil, Kerala, India</p>
+    <p>Address: Mannakuzhil, Kerala, India</p>
   </section>
 </main>
-<footer>&copy; 2025 Mannakuhzil Tours. All rights reserved.</footer>
-
-<script>
-const form = document.getElementById('tourBookingForm');
-const paymentMessage = document.getElementById('paymentMessage');
-
-form.addEventListener('submit', function(event) {
-  event.preventDefault();
-  const formData = new FormData(form);
-  
-  // Here you would integrate payment gateway logic.
-  // For demo, just show a message and reset form
-  paymentMessage.textContent = 'Thank you, ' + formData.get('name') + '! Your booking for "' + formData.get('tour') + '" has been received. We will contact you shortly with payment instructions.';
-  
-  form.reset();
-});
-</script>
-
+<footer>&copy; 2025 Mannakuzhil Tours. All rights reserved.</footer>
 </body>
 </html>
